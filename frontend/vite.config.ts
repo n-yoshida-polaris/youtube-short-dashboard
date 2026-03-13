@@ -9,6 +9,7 @@ export default defineConfig({
     vue(),
   ],
   server: {
+    host: process.env.HOST || 'localhost',
     port: parseInt(process.env.PORT || '5173'),
   },
   resolve: {

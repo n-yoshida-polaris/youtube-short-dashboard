@@ -7,6 +7,7 @@ import { collectStats } from './collector/statsCollector';
 
 const app = express();
 const PORT = process.env.PORT ?? 3000;
+const HOST = process.env.HOST ?? 'localhost';
 
 app.use(express.json());
 
@@ -310,6 +311,6 @@ function calcMedian(nums: number[]): number {
     : (sorted[mid - 1] + sorted[mid]) / 2;
 }
 
-app.listen(PORT, () => {
-  console.log(`[server] Listening on http://localhost:${PORT}`);
+app.listen(+PORT, HOST, () => {
+  console.log(`[server] Listening on http://${HOST}:${PORT}`);
 });
