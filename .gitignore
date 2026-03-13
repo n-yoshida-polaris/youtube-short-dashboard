@@ -1,0 +1,10 @@
+node_modules/
+dist/
+docs/
+*.sqlite
+.env
+.idea
+.idea/*
+*.log
+.claude/
+CLAUDE.md

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Background -->
+  <rect width="64" height="64" rx="12" fill="#1a1a2e"/>
+
+  <!-- Bar chart (3 bars) -->
+  <rect x="8"  y="38" width="12" height="16" rx="2" fill="#4a90d9" opacity="0.7"/>
+  <rect x="26" y="26" width="12" height="28" rx="2" fill="#4a90d9" opacity="0.85"/>
+  <rect x="44" y="14" width="12" height="40" rx="2" fill="#5bc8af"/>
+
+  <!-- Play triangle overlay (top-right) -->
+  <polygon points="46,6 58,13 46,20" fill="#ff4e45" opacity="0.9"/>
+</svg>
