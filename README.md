@@ -148,7 +148,7 @@ pm2 stop yt-dashboard       # 停止
 # フロントエンド（静的ファイル配信）
 server {
     server_name app.example.com;
-    root /path/to/youtube-dashboard/frontend/dist;
+    root /path/to/youtube-short-dashboard/frontend/dist;
     index index.html;
     location / {
         try_files $uri $uri/ /index.html;
@@ -191,7 +191,7 @@ npm run collect
 ### cron で自動実行（推奨: 6時間ごと）
 
 ```cron
-0 */6 * * * cd /path/to/youtube-dashboard && npm run collect >> /var/log/yt-collect.log 2>&1
+0 */6 * * * cd /path/to/youtube-short-dashboard && npm run collect >> /var/log/yt-collect.log 2>&1
 ```
 
 収集処理の内容：
@@ -258,7 +258,7 @@ YouTube API v3 / yt-dlp
 ### ディレクトリ構造
 
 ```
-youtube-dashboard/
+youtube-short-dashboard/
 ├── backend/
 │   ├── src/
 │   │   ├── collector/
