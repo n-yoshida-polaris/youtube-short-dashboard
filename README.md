@@ -65,8 +65,8 @@ brew install yt-dlp
 
 ```bash
 # 1. リポジトリをクローン
-git clone https://github.com/n-yoshida-polaris/short-video-maker.git
-cd youtube-dashboard
+git clone https://github.com/n-yoshida-polaris/youtube-short-dashboard.git
+cd youtube-short-dashboard
 
 # 2. 依存パッケージのインストール
 npm install
