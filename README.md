@@ -95,6 +95,8 @@ PORT=5173  # フロントエンドの開発サーバーポート
 
 ## 起動
 
+### ローカル開発
+
 ```bash
 # バックエンド + フロントエンドを同時起動
 npm run dev
@@ -104,6 +106,54 @@ npm run dev
 |---------|-----|
 | Backend API | http://localhost:3000 |
 | Frontend | http://localhost:5173 |
+
+### 本番（Ubuntu + nginx）
+
+**1. `.env` を設定**
+
+```ini
+# frontend/.env
+VITE_API_URL=https://api.example.com  # nginx で公開するバックエンドのURL
+```
+
+**2. ビルド**
+
+```bash
+npm run build
+# → backend/dist/  （Node.js サーバー）
+# → frontend/dist/ （静的ファイル）
+```
+
+**3. バックエンドを PM2 で常駐化**
+
+```bash
+npm install -g pm2
+pm2 start backend/dist/server.js --name yt-dashboard
+pm2 save
+pm2 startup  # OS 再起動後も自動起動
+```
+
+**4. nginx 設定例**
+
+```nginx
+# フロントエンド（静的ファイル配信）
+server {
+    server_name app.example.com;
+    root /path/to/youtube-dashboard/frontend/dist;
+    index index.html;
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
+
+# バックエンド API（リバースプロキシ）
+server {
+    server_name api.example.com;
+    location / {
+        proxy_pass http://localhost:3000;
+    }
+}
+```
 
 ---
 
