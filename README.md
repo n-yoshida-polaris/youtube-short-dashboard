@@ -75,6 +75,7 @@ cd frontend && npm install && cd ..
 
 # 3. 環境変数を設定
 cp backend/.env.example backend/.env
+cp frontend/.env.example frontend/.env
 ```
 
 `backend/.env` を編集：
@@ -82,6 +83,12 @@ cp backend/.env.example backend/.env
 ```ini
 YOUTUBE_API_KEY=your_api_key_here
 PORT=3000
+```
+
+`frontend/.env` を編集（任意）：
+
+```ini
+PORT=5173  # フロントエンドの開発サーバーポート
 ```
 
 ---
