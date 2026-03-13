@@ -133,6 +133,15 @@ pm2 save
 pm2 startup  # OS 再起動後も自動起動
 ```
 
+PM2 の主要コマンド：
+
+```bash
+pm2 list                    # 起動中のプロセス一覧
+pm2 logs yt-dashboard       # ログ確認
+pm2 restart yt-dashboard    # 再起動
+pm2 stop yt-dashboard       # 停止
+```
+
 **4. nginx 設定例**
 
 ```nginx
